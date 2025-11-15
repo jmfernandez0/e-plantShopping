@@ -178,6 +178,17 @@ body {
    justify-content: center;
     /* background-color: yellow; */
 }
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
 .plant_heading{
     width: 400px;
     text-align: center;
@@ -214,7 +225,11 @@ body {
   .product-button:hover {
     background-color: #45a049;
   }
-  
+  .product-button-disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
   .product-button.added-to-cart {
     background-color: grey; /* Grey when product is added */
   }
