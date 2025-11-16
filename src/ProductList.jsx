@@ -11,19 +11,22 @@ function ProductList({ onHomeClick }) {
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
     const cartItems = useSelector(state => state.cart.items);
+    useEffect(() => {
+        const flags = {};
+        cartItems.forEach(item => {
+            flags[item.name] = true;   // mark items that ARE in the cart
+        });
+        setAddedToCart(flags);
+    }, [cartItems]);
     const totalItemsInCart = cartItems.reduce(
       (sum, item) => sum + (item.quantity || 0),
       0
     );
     const dispatch = useDispatch();
     const handleAddToCart = (product) => {
-        dispatch(addItem(product));  // Send plant data to Redux store
-      
-        setAddedToCart((prevState) => ({
-          ...prevState,
-          [product.name]: true,  // Mark this plant as added to cart
-        }));
-      };
+     dispatch(addItem(product));
+    };
+
     const plantsArray = [
         {
             category: "Air Purifying Plants",
