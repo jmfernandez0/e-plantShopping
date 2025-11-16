@@ -236,19 +236,22 @@ function ProductList({ onHomeClick }) {
     ];
     const styleObj = {
         backgroundColor: '#4CAF50',
-        color: '#fff!important',
-        padding: '15px',
+        color: '#fff',
+        padding: '15px 40px',          // 🔥 más espacio izquierda/derecha
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',          // 🔧 corregido (antes alignIems)
         fontSize: '20px',
-    }
+        boxSizing: 'border-box',
+    };
+
     const styleObjUl = {
         display: 'flex',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        width: '1100px',
-    }
+        gap: '40px',                   // 🔥 separación entre "Plants" y carrito
+        // sin width fijo → se adapta al ancho disponible
+    };
+
     const styleA = {
         color: 'white',
         fontSize: '30px',

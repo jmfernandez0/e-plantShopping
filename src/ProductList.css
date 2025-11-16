@@ -162,6 +162,7 @@ body {
 }
 .cart{
     color: white;
+    position: relative;
     display: flex;
 }
 .cart_quantity_count{
@@ -181,7 +182,7 @@ body {
 .cart-badge {
   position: absolute;
   top: 0;
-  right: -10px;
+  right: -4px;
   background: red;
   color: white;
   font-size: 14px;
